@@ -1,0 +1,127 @@
+﻿@model PaddleSport.Models.Booking
+
+
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script>
+
+    $(document).ready(function () {
+        var url = '@Url.Action("GetCourts")';
+        var url1 = '@Url.Action("GetTotal")';
+        var docs = $("#CourtId");
+        docs.empty();
+        docs.append($('<option></option>').text('Select').val(0));
+        $("#LocationId").change(function () {
+            docs.empty();
+            var sid = $(this).val();
+            if (sid == 0) {
+                $("#pid").hide();
+            }
+            else {
+                $("#pid").show();
+
+                docs.append($('<option></option>').text('Select').val(0));
+                $.getJSON(url, { id: sid }, function (response) {
+                    $.each(response, function (i, e) {
+                        docs.append($('<option></option>').text(e.text).val(e.id));
+                    });
+
+                })
+            }
+        })
+        $("#CourtId").change(function () {
+            var id = $(this).val();
+            $.getJSON(url1, { id: id }, function (response) {
+                var price = response;
+                var hours = $("#NoOfHours").val();
+                var total = price * hours;
+                //alert(total);
+                $("#total").val(total);
+                //})
+            })
+        })
+    });
+</script>
+
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+<div class="form-horizontal">
+    <h1>Booking</h1>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group">
+        @Html.LabelFor(model => model.LocationId, "LocationId", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownList("LocationId", null, "Select", new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.LocationId, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Timings, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Timings, new { htmlAttributes = new { @class = "form-control", @type = "datetime-local" } })
+            @Html.ValidationMessageFor(model => model.Timings, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.NoOfHours, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.NoOfHours, new { htmlAttributes = new { @class = "form-control", @id = "NoOfHours" } })
+            @Html.ValidationMessageFor(model => model.NoOfHours, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    @*<div class="form-group">
+        @Html.LabelFor(model => model.EndTime, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.EndTime, new { htmlAttributes = new { @class = "form-control", @type = "datetime-local" } })
+            @Html.ValidationMessageFor(model => model.EndTime, "", new { @class = "text-danger" })
+        </div>
+    </div>*@
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.CourtId, "CourtId", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownList("CourtId", null, htmlAttributes: new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.CourtId, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.NoOfPlayers, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.NoOfPlayers, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.NoOfPlayers, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.total, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.total, new { htmlAttributes = new { @class = "form-control", @id = "total" } })
+            @Html.ValidationMessageFor(model => model.total, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Book" class="btn btn-default" />
+            @*@Html.ActionLink("Click Here For Payment", "Payment", "Payment")*@
+        </div>
+    </div>
+</div>
+}
+
+<div>
+    @*@Html.ActionLink("Click Here For Payment", "Payment","Payment")*@
+   
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
