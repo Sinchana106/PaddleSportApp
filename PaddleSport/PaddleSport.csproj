@@ -178,29 +178,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202112050700300_PaddleSportUpdation.cs" />
-    <Compile Include="Migrations\202112050700300_PaddleSportUpdation.Designer.cs">
-      <DependentUpon>202112050700300_PaddleSportUpdation.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202112050730083_PaddleSportCourtUpdation.cs" />
-    <Compile Include="Migrations\202112050730083_PaddleSportCourtUpdation.Designer.cs">
-      <DependentUpon>202112050730083_PaddleSportCourtUpdation.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202112050805549_PaddleSportBookingUpdation.cs" />
-    <Compile Include="Migrations\202112050805549_PaddleSportBookingUpdation.Designer.cs">
-      <DependentUpon>202112050805549_PaddleSportBookingUpdation.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202112050827209_PaddleSportBookingStatusUpdation.cs" />
-    <Compile Include="Migrations\202112050827209_PaddleSportBookingStatusUpdation.Designer.cs">
-      <DependentUpon>202112050827209_PaddleSportBookingStatusUpdation.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202112050850293_PaddleSportBookingTotalUpdation.cs" />
-    <Compile Include="Migrations\202112050850293_PaddleSportBookingTotalUpdation.Designer.cs">
-      <DependentUpon>202112050850293_PaddleSportBookingTotalUpdation.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202112051031015_PaddleSportBookingEndTimeUpdation.cs" />
-    <Compile Include="Migrations\202112051031015_PaddleSportBookingEndTimeUpdation.Designer.cs">
-      <DependentUpon>202112051031015_PaddleSportBookingEndTimeUpdation.cs</DependentUpon>
+    <Compile Include="Migrations\202112051605180_PaddleSportUpdation.cs" />
+    <Compile Include="Migrations\202112051605180_PaddleSportUpdation.Designer.cs">
+      <DependentUpon>202112051605180_PaddleSportUpdation.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -313,23 +293,8 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202112050700300_PaddleSportUpdation.resx">
-      <DependentUpon>202112050700300_PaddleSportUpdation.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202112050730083_PaddleSportCourtUpdation.resx">
-      <DependentUpon>202112050730083_PaddleSportCourtUpdation.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202112050805549_PaddleSportBookingUpdation.resx">
-      <DependentUpon>202112050805549_PaddleSportBookingUpdation.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202112050827209_PaddleSportBookingStatusUpdation.resx">
-      <DependentUpon>202112050827209_PaddleSportBookingStatusUpdation.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202112050850293_PaddleSportBookingTotalUpdation.resx">
-      <DependentUpon>202112050850293_PaddleSportBookingTotalUpdation.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202112051031015_PaddleSportBookingEndTimeUpdation.resx">
-      <DependentUpon>202112051031015_PaddleSportBookingEndTimeUpdation.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202112051605180_PaddleSportUpdation.resx">
+      <DependentUpon>202112051605180_PaddleSportUpdation.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

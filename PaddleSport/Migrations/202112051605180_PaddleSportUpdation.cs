@@ -13,11 +13,12 @@ namespace PaddleSport.Migrations
                     {
                         Id = c.Int(nullable: false, identity: true),
                         LocationId = c.Int(),
-                        Timings = c.Int(nullable: false),
+                        Timings = c.DateTime(nullable: false),
                         NoOfHours = c.Int(nullable: false),
+                        EndTime = c.DateTime(nullable: false),
                         CourtId = c.Int(),
                         NoOfPlayers = c.Int(nullable: false),
-                        Status = c.String(),
+                        total = c.Single(),
                     })
                 .PrimaryKey(t => t.Id)
                 .ForeignKey("dbo.Courts", t => t.CourtId)
@@ -31,6 +32,7 @@ namespace PaddleSport.Migrations
                     {
                         Id = c.Int(nullable: false, identity: true),
                         LocationId = c.Int(),
+                        Name = c.String(),
                         PricePerHour = c.Single(nullable: false),
                     })
                 .PrimaryKey(t => t.Id)

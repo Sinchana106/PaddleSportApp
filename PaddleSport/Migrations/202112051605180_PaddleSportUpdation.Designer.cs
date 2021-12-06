@@ -7,13 +7,13 @@ namespace PaddleSport.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class PaddleSportBookingUpdation : IMigrationMetadata
+    public sealed partial class PaddleSportUpdation : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(PaddleSportBookingUpdation));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(PaddleSportUpdation));
         
         string IMigrationMetadata.Id
         {
-            get { return "202112050805549_PaddleSportBookingUpdation"; }
+            get { return "202112051605180_PaddleSportUpdation"; }
         }
         
         string IMigrationMetadata.Source
